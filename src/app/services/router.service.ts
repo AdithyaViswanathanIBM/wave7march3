@@ -11,4 +11,13 @@ export class RouterService {
   routeToLogin() {
     this.router.navigate(['login']);
   }
+  routetoEditView(noteId){
+    this.router.navigate(['dashboard',{
+       outlets:{
+         noteEditOutlet : ['view',noteId,'edit']
+       }
+
+    }]); // dashboard/view/editview
+  }
+
 }

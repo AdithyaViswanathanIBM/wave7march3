@@ -1,0 +1,16 @@
+.notesContainer {
+    margin: 4vh 4vw;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: row wrap;
+}
+
+.noteCard {
+    width: fit-content;
+    margin-bottom: 2em;
+}
+
+.noteCardTitle {
+    font-weight: bold;
+    font-size: 1.3rem;
+}

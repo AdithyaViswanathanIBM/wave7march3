@@ -5,9 +5,9 @@
     <label>List is Empty</label>
 </div>
 <!-- Load and display the collection of notes from server as Material Cards with card title set to note title and card content set to note text  -->
-<div *ngIf="notes.length > 0">
-    <mat-card *ngFor="let note of notes">
-        <mat-card-title>{{note.title}}</mat-card-title>
-        <mat-card-content>{{note.text}}</mat-card-content>
-    </mat-card>
+<div *ngIf="notes.length > 0" class="notesContainer">
+    <app-note [note]="mynote" *ngFor="let mynote of notes"></app-note>
 </div>
+
+<!--noteview -> note using !Input -->
+<!-- note(mat-card) --cards / editnoteview -->
