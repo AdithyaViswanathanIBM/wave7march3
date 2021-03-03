@@ -1,0 +1,30 @@
+<p>Login Page</p>
+<!-- Label to display any error messages -->
+<label class="error-message">{{ submitMessage }}</label>
+
+<form (ngSubmit)="loginSubmit()" [formGroup]="loginForm">
+    <div class="container-fluid">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" class="form-control" type="text" formControlName="username">
+            <span *ngIf="username?.invalid && (username?.dirty || username?.touched)">UserName is Mandatory</span>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" class="form-control" type="password" formControlName="password">
+            <span *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+                 <span *ngIf="password?.errors?.required">
+                     Password is Mandatory 
+                    </span>
+            <span *ngIf="password?.errors?.minlength">
+                Must be 8 Chracters
+            </span>
+            </span>
+        </div>
+
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" value="Sign In" [disabled]="loginForm.invalid">
+        </div>
+    </div>
+
+</form>

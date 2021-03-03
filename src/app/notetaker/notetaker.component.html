@@ -1,0 +1,33 @@
+<p>
+    notetaker works!
+</p>
+<label class="error-message">{{ submitMessage }}</label>
+<div>
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Take a note
+            </mat-panel-title>
+            <mat-panel-description>
+                Angular Assignment - Keep Level 1
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <form [formGroup]="noteTakeForm" (ngSubmit)="addNote()">
+            <div>
+                <mat-form-field>
+                    <mat-label>Title for the note </mat-label>
+                    <input matInput type="text" name="title" formControlName="title">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Text for the note </mat-label>
+                    <textarea matInput name="" id="" cols="30" rows="10" formControlName="text"></textarea>
+                    <<input matInput name="text" [(ngModel)]="note.text">
+                </mat-form-field>
+            </div>
+            <div class="example-button-row">
+                <button mat-button color="primary" type="submit">Done</button>
+            </div>
+        </form>
+    </mat-expansion-panel>
